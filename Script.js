@@ -112,7 +112,7 @@ function validateLogin() {
             return false;
         }
 
-        window.location.href = 'order.html';
+        window.location.href = 'Order.html';
         return false;
     }
 
@@ -167,3 +167,4 @@ images.length);
 
     window.location.href="HOME.html"
 }
+
