@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Lati Tuck Shop - Order Form</title>
+    <link rel="stylesheet" href="style .css">
+      <script src="Script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>WELCOME TO LATI TUCK SHOP</h1>
+    </header>
+   
+    <nav>
+        <ul>
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="order-form">
+            <h2>Order Form</h2>
+            <form>
+                <label>Name:</label>
+                <input type="text" name="name" required>
+
+                <label>Surname:</label>
+                <input type="text" name="surname" required>
+
+                <label>Email:</label>
+                <input type="email" name="email" required>
+
+                <label>Contact No:</label>
+                <input type="tel" name="contact" required>
+
+                <label>Payment Method:</label>
+                <select name="payment" required>
+                    <option value="">Select payment method</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Cash">Cash</option>
+                </select>
+
+                <label>Foods:</label>
+                <select name="foods" required>
+                    <option value="">Select types of food</option>
+                    <option value="Cookies">Cookies</option>
+                    <option value="Milk">Milk</option>
+                    <option value="Apples">Apples</option>
+                    <option value="Lip balm">Lip balm</option>
+                    <option value="Pain reliever">Pain reliever</option>
+                </select>
+
+                <div class="images">
+                    <img src="apples.webp" alt="Apples">
+                    <img src="cookies.jpg" alt="Cookies">
+                    <img src="lip balm.webp" alt="Lip balm">
+                    <img src="milk.webp" alt="Milk">
+                    <img src="pain reliever.jpeg" alt="Pain reliever">
+                    <img src="pen.webp" alt="Pen">
+                </div>
+
+                <button type="submit">SUBMIT ORDER</button>
+            </form>
+            <br>
+            <button onclick="Logout()"></button>
+            <script>
+                function Logout() {
+                    localStorage.removeItem("loggedInUser");
+                    window.location.href = "Login.html"
+                }
+            </script>
+        </section>
+
+        <section class="social">
+            <p>You can find us on</p>
+            <a href="#"><img src="facebook.webp" alt="Facebook"></a>
+            <a href="#"><img src="whatsapp.webp" alt="WhatsApp"></a>
+            <a href="#"><img src="instagram.webp" alt="Instagram"></a>
+            <a href="#"><img src="twitter.webp" alt="Twitter"></a>
+        </section>
+        <script> 
+            function loaduser() {
+                let user = localStorage.getItem("loggedInUser");
+                if (user){
+                    document.getElementById("welcome").innerText
+                    ="Welcome, " + user + "!";
+                } else {
+                    window.location.href="Login.html";
+                }
+                }
+        </script>
+        <body onload="LoadUser()">
+            <h2 id="welcome">Welcome!</h2>
+            <p>Place your oder below:</p>
+        </body>
+    </main>
+    
+    
+    <footer>
+        <p>CONTACT INFO: 123-456-7890 | info@latituckshop.com</p>
+    </footer>
+</body>
+</html>
